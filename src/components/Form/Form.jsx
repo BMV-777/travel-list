@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const Form = ({ onAddItems }) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -11,6 +11,8 @@ const Form = () => {
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
     console.log(newItem);
+
+    onAddItems(newItem);
 
     setDescription("");
     setQuantity(1);
@@ -34,7 +36,7 @@ const Form = () => {
       <label>
         <input
           type="text"
-          placeholder="item..."
+          placeholder="Item..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
