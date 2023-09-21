@@ -2,12 +2,17 @@ import React from "react";
 
 import Item from "../Item/Item";
 
-const PackingList = ({ items, onDeleteItem }) => {
+const PackingList = ({ items, onDeleteItem, onToggleItem }) => {
   return (
     <div className="list">
       <ul>
         {items.map((item, index) => (
-          <Item item={item} key={index} onDeleteItem={onDeleteItem} />
+          <Item
+            item={item}
+            key={index}
+            onDeleteItem={onDeleteItem}
+            onToggleItem={onToggleItem}
+          />
         ))}
       </ul>
     </div>
