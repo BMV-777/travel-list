@@ -4,11 +4,11 @@ import PackingList from "./components/PackingList/PackingList";
 import Stats from "./components/Stats/Stats";
 import { useState } from "react";
 
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: true },
-  { id: 2, description: "Socks", quantity: 12, packed: false },
-  { id: 2, description: "Charger", quantity: 1, packed: true },
-];
+// const initialItems = [
+//   { id: 1, description: "Passports", quantity: 2, packed: true },
+//   { id: 2, description: "Socks", quantity: 12, packed: false },
+//   { id: 2, description: "Charger", quantity: 1, packed: true },
+// ];
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -43,9 +43,10 @@ export default function App() {
         onDeleteItem={handelDeleteId}
         onToggleItem={handelToggleItem}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
-
-// 6/72
+// "Start adding some items to your packing list 🚀"
+// 7/85
+// ("You got everything! React to go ✈");
