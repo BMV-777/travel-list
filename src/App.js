@@ -34,6 +34,11 @@ export default function App() {
     );
   }
 
+  function handelClear() {
+    const confirm = window.confirm("Are you sure you want to delete all items");
+    if (confirm) setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -42,11 +47,12 @@ export default function App() {
         items={items}
         onDeleteItem={handelDeleteId}
         onToggleItem={handelToggleItem}
+        onClear={handelClear}
       />
       <Stats items={items} />
     </div>
   );
 }
-// "Start adding some items to your packing list 🚀"
+// "Are you sure you want to delete all items 🚀"
 // 7/85
 // ("You got everything! React to go ✈");

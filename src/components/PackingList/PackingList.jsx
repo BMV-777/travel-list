@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Item from "../Item/Item";
 
-const PackingList = ({ items, onDeleteItem, onToggleItem }) => {
+const PackingList = ({ items, onDeleteItem, onToggleItem, onClear }) => {
   const [sortBy, setSortBy] = useState("input");
 
   let sortedItem;
@@ -18,12 +18,6 @@ const PackingList = ({ items, onDeleteItem, onToggleItem }) => {
     sortedItem = items
       .slice()
       .sort((a, b) => Number(a.packed) - Number(b.packed));
-
-  function handelDelete() {
-    setSortBy("input");
-    setSortBy("description");
-    setSortBy("packed");
-  }
 
   return (
     <div className="list">
@@ -43,7 +37,7 @@ const PackingList = ({ items, onDeleteItem, onToggleItem }) => {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
-        <button onClick={handelDelete}>clear</button>
+        <button onClick={onClear}>Clear list</button>
       </div>
     </div>
   );
